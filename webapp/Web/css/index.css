@@ -1,0 +1,169 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    width: 1110px;;
+    height: 100%;
+    margin: 0 auto;
+    font-family: '微软雅黑';
+}
+.container header {
+    width: 100%;
+    height: 250px;
+    background-image: url(../img/header.jpg);
+    border-radius: 6px;
+}
+.container header .school {
+    float: right;
+    margin: 50px;
+}
+.container header .dept {
+    float: left;
+    margin-left: 78px;
+    margin-top: 150px;
+    font-size: 50px;
+    color: aliceblue;
+}
+.container nav {
+    width: 100%;
+    height: 60px;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+.container nav>ul {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.container nav>ul>li {
+    display: inline-block;
+    width: 8%;
+    height: 100%;
+    text-align: center;
+    line-height: 57px;
+    margin-right: -10px;
+}
+.container nav ul,.container nav li {
+    list-style: none;
+}
+.container nav a {
+    text-decoration: none;
+    color: black;
+}
+.container nav ul li:hover {
+    background-color: rgb(243, 244, 246);
+    color: white;
+}
+.container nav .nav-menu {
+    float: left;
+    margin-left: 50px;
+}
+.container nav .nav-menu ul {
+    display: none;
+    z-index: 99;
+    position: absolute;
+    background-color: rgb(243, 244, 246);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.container nav .nav-menu ul {
+    width: 87px;
+}
+.container nav .nav-menu>ul>li {
+    text-align: center;
+}
+.container .content {
+    width: 100%;
+    height: 900px;
+}
+.container .content .wrap {
+    float: left;
+    width: 64%;
+    height: 350px;
+}
+.container .content .news {
+    float: right;
+    width: 50%;
+    height: 350px;
+}
+.container .content .news .calendar {
+    border-radius: 3px;
+    float: right;
+}
+.calendar-title {
+    background-color: rgb(19, 141, 218);
+    color: aliceblue;
+}
+.container .content .assess {
+    float: left;
+    width: 50%;
+    height: 390px;
+}
+.container .content .assess .assess-title {
+    position: relative;
+    width: 100%;
+    border-bottom: 3px solid rgb(19, 141, 218);
+    top: 20px;
+}
+.container .content .assess .assess-title .title {
+    font-size: 22px;
+    color: rgb(19, 141, 218);
+}
+.container .content .assess .assess-title .more {
+    float: right;
+}
+.container .content .assess .assess-content {
+    position: relative;
+    top: 30px;
+}
+.container .content .assess .assess-content a {
+    color: black;
+}
+.container .content .work {
+    float: right;
+    width: 47%;
+    height: 390px;
+}
+.container .content .work .work-title {
+    position: relative;
+    width: 100%;
+    border-bottom: 3px solid rgb(19, 141, 218);
+    top: 20px;
+}
+.container .content .work .work-title .title {
+    font-size: 22px;
+    color: rgb(19, 141, 218);
+}
+.container .content .work .work-title .more {
+    float: right;
+}
+.container .content .work .work-content {
+    position: relative;
+    top: 30px;
+}
+.container .content .work .work-content a {
+    color: black;
+}
+.container footer {
+    position: absolute;
+    width: 97.5%;
+    bottom: 0px;
+    height: 150px;
+    background-color: rgb(243, 244, 246);
+}
+.container footer .link {
+    position: relative;
+    width: 100%;
+    top: 80px;
+    text-align: center;
+}
+.container footer .copyright {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 88px;
+}

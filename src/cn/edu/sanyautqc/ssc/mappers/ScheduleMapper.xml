@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.sanyautqc.ssc.mappers.ScheduleMapper">
+	<resultMap type="Schedule" id="result">
+		<id column="id" property="id"/>
+		<result column="file_name" property="fileName" jdbcType="VARCHAR"/>
+		<result column="file_url" property="fileUrl" jdbcType="VARCHAR"/>
+	</resultMap>
+	<insert id="addSchedule" parameterType="Schedule">
+		insert into schedule (
+			id,	
+			name,
+			author,
+			time,
+			content,
+			file_name,
+			file_url
+		) value (
+			#{id},
+			#{name},
+			#{author},
+			#{time},
+			#{content},
+			#{fileName},
+			#{fileUrl}
+		)
+	</insert>
+	<select id="findAll" resultMap="result">
+		select * from schedule order by time desc
+	</select>
+	<delete id="deleteSchedule" parameterType="string">
+		delete from schedule where id = #{id}
+	</delete>
+	<select id="selectSchedule" parameterType="string" resultMap="result">
+		select * from schedule where id = #{id}
+	</select>
+	<update id="updateSchedule" parameterType="Schedule">
+		update
+			schedule
+		set
+			name = #{name},
+			author = #{author},
+			time = #{time},
+			content = #{content},
+			file_name = #{fileName},
+			file_url = #{fileUrl}
+		where 
+			id = #{id}
+	</update>
+	<select id="getNew" resultMap="result">
+		select * from schedule order by time desc limit 0,6
+	</select>
+	<select id="keywordSearch" parameterType="string" resultMap="result">
+		select * from schedule where name like '%${value}%' order by time desc
+	</select>
+</mapper>

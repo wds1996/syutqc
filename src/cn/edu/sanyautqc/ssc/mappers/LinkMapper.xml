@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.sanyautqc.ssc.mappers.LinkMapper">
+	<resultMap type="Link" id="result">
+		<id column="id" property="id"/>
+	</resultMap>
+	<insert id="addLink" parameterType="Link">
+		insert into link (
+			id,	
+			name,
+			url
+		) value (
+			null,
+			#{name},
+			#{url}
+		)
+	</insert>
+	<select id="findAll" resultMap="result">
+		select * from link
+	</select>
+	<delete id="deleteLink" parameterType="string">
+		delete from link where id = #{id}
+	</delete>
+	<select id="selectLink" parameterType="string" resultMap="result">
+		select * from link where id = #{id}
+	</select>
+	<update id="updateLink" parameterType="Link">
+		update
+			link
+		set
+			name = #{name},
+			url = #{url}
+		where 
+			id = #{id}
+	</update>
+</mapper>

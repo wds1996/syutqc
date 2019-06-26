@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.sanyautqc.ssc.mappers.SuggestMapper">
+	<resultMap type="Suggest" id="result">
+		<id column="id" property="id"/>
+	</resultMap>
+	<insert id="add" parameterType="Suggest">
+		insert into suggest (
+			id,	
+			name,
+			dept,
+			tel,
+			time,
+			work,
+			content
+		) value (
+			#{id},
+			#{name},
+			#{dept},
+			#{tel},
+			#{time},
+			#{work},
+			#{content}
+		)
+	</insert>
+	<select id="findAll" resultMap="result">
+		select * from suggest order by time desc
+	</select>
+	<select id="detail" parameterType="string" resultMap="result">
+		select * from suggest where id = #{id}
+	</select>
+	<delete id="delete" parameterType="string">
+		delete from suggest where id = #{id}
+	</delete>
+	<select id="keywordSearch" parameterType="string" resultMap="result">
+		select * from suggest where name like '%${value}%' order by time desc
+	</select>
+</mapper>

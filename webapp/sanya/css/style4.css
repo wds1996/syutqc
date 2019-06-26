@@ -1,0 +1,26 @@
+*{margin: 0;padding: 0;}
+.content{width: 100%;}
+.content2{width: 1200px;height: 800px;margin: 0 auto;}
+.content3{width: 1200px;height: 60px;background:url(../img/bumen2.png) no-repeat;}
+.content3_nav{float: right;margin-top: 15px;}
+.content3_nav a{text-decoration: none;color: #1c2765;}
+.nav{width: 159px;height:150px;float: left; }
+.nav li{list-style: none;width: 100px;height: 30px;line-height: 30px;text-align: center;cursor: pointer;margin: 10px 0;margin-left: 26px;}
+.nav li:hover{background-color: #dcdcdc;}
+.nav_content{width: 1000px;height: 1200px;float: left;overflow: hidden;}
+.ct{width: 1000px;height: 1200px;}
+.ct h1{padding: 20px 0;text-align: center;}
+.ct_content{width: 800px;height: 600px;margin: 50px auto;border-radius: 30px;border: 2px dashed #1c2765;}
+.ct_content2{width: 500px;height: 500px;padding: 50px;}
+.ct_content2 input{width: 200px;height: 30px;border-radius: 8px;border:2px solid #1c2765;background-color: #edf3ff;outline: none;}
+.jspan{vertical-align: top;}
+.ct_content2 textarea{width: 550px;height: 200px;position: relative;top: -22px;left: 89px;border: 2px solid #1c2765;background-color: #edf3ff;border-radius: 8px;outline: none;}
+.ct_content2 button{width: 80px;height: 30px;border-radius: 5px;background-color: #1c2765;margin-left: 160px;color: #fff;cursor: pointer;}
+.active2{background-color: #dcdcdc}
+
+.ct_download{width: 800px;height: 588px;border: 2px solid #1c2765;margin-left: 120px;}
+.ct_download li{width: 800px;list-style: none;height: 20px;cursor: pointer;line-height: 20px;color: #000;}
+
+.ct_download span{float: left;padding: 10px;margin-top: 2px;}
+
+.ct_download a{text-decoration: none;color: #000;}

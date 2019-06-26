@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.multipart.maxSize" value="52428800"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="LoginInterceptor" class="cn.edu.sanyautqc.ssc.web.interceptor.LoginInterceptor">
+				<param name="excludeMethods">login</param>
+			</interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="LoginInterceptor"/>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="login">login.jsp</result>
+		</global-results>
+	
+		<action name="user_*" class="cn.edu.sanyautqc.ssc.web.action.UserAction" method="{1}">
+			<!-- 登录操作 -->
+			<result name="login_input">login.jsp</result>
+			<result name="login_success" type="redirect">home.jsp</result>
+			<!-- 退出登陆操作 -->
+			<result name="exit_success" type="redirect">login.jsp</result>
+			<!-- 修改密码 -->
+			<result name="modify">modifypassword.jsp</result>
+			<result name="modify_success">modifypassword.jsp</result>
+			<interceptor-ref name="myStack"/>
+		</action>
+		<action name="mainAction" class="cn.edu.sanyautqc.ssc.web.action.MainAction">
+			<result name="success">/page/main.jsp</result>
+			<interceptor-ref name="myStack"/>
+		</action>
+		<action name="notice_*" class="cn.edu.sanyautqc.ssc.web.action.NoticeAction" method="{1}">
+			<result name="toList" type="redirect">/page/notice/list.jsp</result>
+			<result name="toUpdatePage">/page/notice/update.jsp</result>
+			<result name="newnotice">/page/notice/cancopy.jsp</result>
+
+		</action>
+		<action name="assess_*" class="cn.edu.sanyautqc.ssc.web.action.AssessAction" method="{1}">
+			<result name="toList" type="redirect">/page/assess/list.jsp</result>
+			<result name="toUpdatePage">/page/assess/update.jsp</result>
+			<result name="new">/page/assess/cancopy.jsp</result>
+		</action>
+		<action name="process_*" class="cn.edu.sanyautqc.ssc.web.action.ProcessAction" method="{1}">
+			<result name="toList" type="redirect">/page/process/list.jsp</result>
+			<result name="toUpdatePage">/page/process/update.jsp</result>
+			<result name="new">/page/process/cancopy.jsp</result>
+		</action>
+		<action name="file_*" class="cn.edu.sanyautqc.ssc.web.action.FileAction" method="{1}">
+			<result name="toList" type="redirect">/page/file/list.jsp</result>
+			<result name="toUpdatePage">/page/file/update.jsp</result>
+			<result name="new">/page/file/cancopy.jsp</result>
+		</action>
+		<action name="report_*" class="cn.edu.sanyautqc.ssc.web.action.ReportAction" method="{1}">
+			<result name="toList" type="redirect">/page/report/list.jsp</result>
+			<result name="toUpdatePage">/page/report/update.jsp</result>
+			<result name="new">/page/report/nocopy.jsp</result>
+		</action>
+		<action name="schedule_*" class="cn.edu.sanyautqc.ssc.web.action.ScheduleAction" method="{1}">
+			<result name="toList" type="redirect">/page/schedule/list.jsp</result>
+			<result name="toUpdatePage">/page/schedule/update.jsp</result>
+			<result name="new">/page/schedule/cancopy.jsp</result>
+		</action>
+		<action name="work_*" class="cn.edu.sanyautqc.ssc.web.action.WorkAction" method="{1}">
+			<result name="toList" type="redirect">/page/work/list.jsp</result>
+			<result name="toUpdatePage">/page/work/update.jsp</result>
+			<result name="new">/page/work/nocopy.jsp</result>
+		</action>
+		<action name="evaluate_*" class="cn.edu.sanyautqc.ssc.web.action.EvaluateAction" method="{1}">
+			<result name="toList" type="redirect">/page/evaluate/list.jsp</result>
+			<result name="toUpdatePage">/page/evaluate/update.jsp</result>
+			<result name="new">/page/evaluate/cancopy.jsp</result>
+		</action>
+		<action name="supervise_*" class="cn.edu.sanyautqc.ssc.web.action.SuperviseAction" method="{1}">
+			<result name="toList" type="redirect">/page/supervise/list.jsp</result>
+			<result name="toUpdatePage">/page/supervise/update.jsp</result>
+			<result name="new">/page/supervise/cancopy.jsp</result>
+		</action>
+		<action name="authentication_*" class="cn.edu.sanyautqc.ssc.web.action.AuthenticationAction" method="{1}">
+			<result name="toList" type="redirect">/page/authentication/list.jsp</result>
+			<result name="toUpdatePage">/page/authentication/update.jsp</result>
+			<result name="new">/page/authentication/cancopy.jsp</result>
+		</action>
+		<action name="survey_*" class="cn.edu.sanyautqc.ssc.web.action.SurveyAction" method="{1}">
+			<result name="toList" type="redirect">/page/survey/list.jsp</result>
+			<result name="toUpdatePage">/page/survey/update.jsp</result>
+
+		</action>
+		<action name="download_*" class="cn.edu.sanyautqc.ssc.web.action.DownloadAction" method="{1}">
+			<result name="toList" type="redirect">/page/download/list.jsp</result>
+			<result name="toUpdatePage">/page/download/update.jsp</result>
+			<result name="new">/page/download/cancopy.jsp</result>
+		</action>
+		<action name="uploadImage" class="cn.edu.sanyautqc.ssc.web.action.UploadImage"></action>
+		<action name="suggest_*" class="cn.edu.sanyautqc.ssc.web.action.SuggestAction" method="{1}">
+			<result name="toList" type="redirect">/page/suggest/list.jsp</result>
+			<result name="detail">/page/suggest/detail.jsp</result>
+		</action>
+		<action name="link_*" class="cn.edu.sanyautqc.ssc.web.action.LinkAction" method="{1}">
+			<result name="toList" type="redirect">/page/link/list.jsp</result>
+			<result name="toUpdatePage">/page/link/update.jsp</result>
+		</action>
+	</package>
+</struts>
